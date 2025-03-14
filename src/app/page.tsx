@@ -35,12 +35,12 @@ const tasks = [
 
 export default function Home() {
   return (
-    <div className="w-full min-h-screen bg-slate-700 flex flex-col items-center justify-center">
+    <div className="w-full min-h-screen bg-background flex flex-col items-center justify-center">
       {/* Center Container */}
-      <div className="w-auto flex self-center bg-slate-200">
-      <Table className="bg-slate-800">
+      <div className="w-auto flex self-center bg-foreground">
+      <Table className="bg-card text-card-foreground">
       {/* <TableCaption>A list of your recent tasks.</TableCaption> */}
-      <TableHeader className="bg-slate-900">
+      <TableHeader>
         <TableRow>
           <TableHead>Check</TableHead>
           <TableHead>Task</TableHead>
@@ -51,7 +51,7 @@ export default function Home() {
       </TableHeader>
       <TableBody>
         {tasks.map((task) => (
-          <TableRow key={task.task}>
+          <TableRow key={task.task} className="h-[4rem]">
             <TableCell><Checkbox></Checkbox></TableCell>
             <TableCell className="font-medium">{task.task}</TableCell>
             <TableCell>{task.title}</TableCell>
